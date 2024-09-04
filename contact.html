@@ -54,13 +54,13 @@
                 >About</a
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a
                 class="nav-link py-2 px-3 fw-bold text-black"
                 href="classes.html"
                 >Classes</a
               >
-            </li>
+            </li> -->
             <li class="nav-item">
               <a
                 class="nav-link py-2 px-3 fw-bold text-black"
@@ -74,6 +74,38 @@
                 href="gallery.html"
                 >Gallery</a
               >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link py-2 px-3 fw-bold text-black dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <li>
+                  <a class="dropdown-item" href="#">Pages</a>
+                </li> -->
+                <li>
+                  <a class="dropdown-item" href="curriculum.html"
+                    >Curriculum</a
+                  >
+                </li>
+                <li>
+                    <a class="dropdown-item" href="uniform.html"
+                      >Uniform</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="timings.html"
+                      >School Timings</a
+                    >
+                  </li>
+              </ul>
             </li>
             <!-- <li class="nav-item dropdown">
               <a
@@ -97,13 +129,13 @@
                 </li>
               </ul>
             </li> -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a
                 class="nav-link py-2 px-3 fw-bold text-black"
                 href="plog_grid.html"
                 >Blog Grid</a
               >
-            </li>
+            </li> -->
             <li class="nav-item">
               <a
                 class="nav-link py-2 px-3 fw-bold text-black active"
@@ -112,12 +144,12 @@
               >
             </li>
           </ul>
-          <a
+          <!-- <a
             href="#"
             class="main-link mb-2 mb-lg-0 d-inline-block text-decoration-none text-white py-2 px-4 rounded-pill"
           >
             Join Class
-          </a>
+          </a> -->
         </div>
       </div>
     </nav>
@@ -156,47 +188,70 @@
             <div class="item">
               <input
                 type="text"
+                id="name"
                 class="form-control form-control-lg mb-3"
                 placeholder="Your Name"
                 aria-label="Your Name"
               />
-
+          
               <input
                 type="email"
+                id="email"
                 class="form-control form-control-lg mb-3"
                 placeholder="Your Email"
                 aria-label="Your Email"
               />
-
+          
               <input
                 type="text"
+                id="subject"
                 class="form-control form-control-lg mb-3"
-                placeholder="Subject"
+                placeholder="Mobile Number"
                 aria-label="Subject"
               />
-
+          
               <textarea
+                id="message"
                 class="form-control form-control-lg mb-3"
                 placeholder="Message"
                 aria-label="Message"
               ></textarea>
-
+          
               <button
                 class="main-link mb-2 mb-lg-0 d-inline-block text-decoration-none text-white border-0 py-2 px-4 rounded-pill"
+                onclick="sendMessage()"
               >
-                send Message
+                Send Message
               </button>
             </div>
           </div>
+          
+          <script>
+            function sendMessage() {
+              var name = document.getElementById('name').value;
+              var email = document.getElementById('email').value;
+              var subject = document.getElementById('subject').value;
+              var message = document.getElementById('message').value;
+          
+              // Format message as a single line
+              var prefilledMessage = `Name: ${name} \n\n Email: ${email}\n Mobile Number: ${subject} \n Message: ${message}`;
+              var whatsappNumber = '+918520997742'; // Replace with your WhatsApp number
+          
+              var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(prefilledMessage)}`;
+          
+              window.open(whatsappUrl, '_blank');
+            }
+          </script>
+          
 
           <div class="col p-3">
             <div class="item">
-              <p class="lead">
+              <!-- <p class="lead">
                 Labore sea amet kasd diam justo amet ut vero justo. Ipsum ut et
                 kasd duo sit, ipsum sea et erat est dolore, magna ipsum et magna
                 elitr. Accusam accusam lorem magna, eos et sed eirmod dolor est
                 eirmod eirmod amet.
-              </p>
+              </p> -->
 
               <!-- start media object -->
               <div class="d-flex align-items-center gap-4 py-3">
@@ -207,7 +262,9 @@
                 </div>
                 <div class="content">
                   <div class="h5 fw-bold">Address</div>
-                  <span class="text-muted">123 Street, New York, USA</span>
+                  <span class="text-muted">Near Rameshwar Mahadev Temple,
+                    K.K. Colony , Basni First Phase ,
+                    Jodhpur - 342005 (Raj,)</span>
                 </div>
               </div>
               <!-- end media object -->
@@ -221,7 +278,7 @@
                 </div>
                 <div class="content">
                   <div class="h5 fw-bold">Email</div>
-                  <span class="text-muted">info@example.com</span>
+                  <span class="text-muted">wisdomkids.jodhpur@gmail.com</span>
                 </div>
               </div>
               <!-- end media object -->
@@ -235,7 +292,7 @@
                 </div>
                 <div class="content">
                   <div class="h5 fw-bold">Phone</div>
-                  <span class="text-muted">+012 345 67890</span>
+                  <span class="text-muted">9462094615</span>
                 </div>
               </div>
               <!-- end media object -->
@@ -361,21 +418,21 @@
                   class="d-block text-decoration-none text-white mt-2 px-4 position-relative"
                   >About Us</a
                 >
-                <a
+                <!-- <a
                   href="classes.html"
                   class="d-block text-decoration-none text-white mt-2 px-4 position-relative"
                   >Our Classes</a
-                >
+                > -->
                 <a
                   href="teachers.html"
                   class="d-block text-decoration-none text-white mt-2 px-4 position-relative"
                   >Our Teachers</a
                 >
-                <a
+                <!-- <a
                   href="plog_grid.html"
                   class="d-block text-decoration-none text-white mt-2 px-4 position-relative"
                   >Our Blog</a
-                >
+                > -->
                 <a
                   href="contact.html"
                   class="d-block text-decoration-none text-white mt-2 px-4 position-relative"
