@@ -329,11 +329,11 @@
                   </div>
                 </div>
               </div>
-              <a
+              <!-- <a
                 href="#"
                 class="main-link mb-2 mb-lg-0 d-inline-block text-decoration-none text-white py-2 px-4 rounded-pill"
                 >Join Class</a
-              >
+              > -->
             </div>
           </div>
         </div>
@@ -526,6 +526,7 @@
       name="name"
       id="name"
       placeholder="Your Name"
+      required
     />
     <input
       class="form-control p-3 m-3 shadow-none"
@@ -533,6 +534,9 @@
       name="email"
       id="email"
       placeholder="Your Email"
+      pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+      title="Please enter a valid Gmail address."
+      required
     />
     <input
       class="form-control p-3 m-3 shadow-none"
@@ -540,16 +544,30 @@
       name="mobile"
       id="mobile"
       placeholder="Your Mobile Number"
+      pattern="\d{10}"
+      title="Please enter a 10-digit mobile number."
+      maxlength="10"
+      required
     />
     <select
       class="form-select p-3 m-3 shadow-none"
       name="select"
       id="select"
+      required
     >
-      <option value="">Select A Class</option>
-      <option value="class1">Class 1</option>
-      <option value="class2">Class 2</option>
-      <option value="class3">Class 3</option>
+      <option value="">Select a Class</option>
+      <option value="Play Group">Play Group</option>
+      <option value="Nursery">Nursery</option>
+      <option value="KG">KG</option>
+      <option value="Prep">Prep</option>
+      <option value="Class 1">Class 1</option>
+      <option value="CLass 2">Class 2</option>
+      <option value="Class 3">Class 3</option>
+      <option value="Class 4">Class 4</option>
+      <option value="Class 5">Class 5</option>
+      <option value="Class 6">Class 6</option>
+      <option value="Class 7">Class 7</option>
+      <option value="Class 8">Class 8</option>
     </select>
     <button
       type="button"
@@ -561,6 +579,28 @@
     </button>
   </div>
 </form>
+
+<script>
+  function sendToWhatsApp() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const mobile = document.getElementById('mobile').value;
+    const selectedClass = document.getElementById('select').value;
+
+    if (!name || !email || !mobile || !selectedClass) {
+      alert('Please fill out all fields.');
+      return;
+    }
+
+    const message = `*New Booking Request*\n\nName: ${name}\nEmail: ${email}\nMobile: ${mobile}\nClass: ${selectedClass}`;
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '+918520997742'; // Replace with the WhatsApp phone number
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(url, '_blank');
+  }
+</script>
+
 
 <script>
   function sendToWhatsApp() {
@@ -906,7 +946,7 @@
                 >Wisdom Kids School</a
               >
               <p class="my-3">
-                "At Wisdom Kids School, we ignite curiosity and passion for learning."
+                We Believe in the value of childhood.
               </p>
               <ul class="list-unstyled mb-0 p-0 d-flex gap-2">
                 <li>
